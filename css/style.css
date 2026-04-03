@@ -1,7 +1,60 @@
 body {
   max-width: 1200px;
   margin: auto;
+  background-image: url("/images/bg.jpg");
 }
+
 h1 {
-	text-align: center;
+  text-align: center;
+  color: rgb(47, 185, 132);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.galerie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.galerie img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .galerie img {
+    width: 45%;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galerie img {
+    width: 100%;
+    height: 200px;
+  }
+}
+.galerie img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+
+  transition: all 0.4s ease;
+}
+.galerie:hover img {
+  transform: scale(0.9);
+  filter: grayscale(100%) sepia(60%);
+  opacity: 0.6;
+}
+.galerie img:hover {
+  transform: scale(1.3);
+  filter: none;
+  opacity: 1;
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
